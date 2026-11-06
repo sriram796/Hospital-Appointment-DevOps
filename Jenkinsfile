@@ -1,8 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    tools {
+        nodejs 'NodeJS-20'
+    }
 
+    stages {
         stage('Checkout') {
             steps {
                 echo 'Checking out Hospital Appointment source code'
@@ -12,6 +15,8 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                sh 'node --version'
+                sh 'npm --version'
                 sh 'npm install'
             }
         }
