@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest --runInBand",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test:e2e": "node tests/selenium.e2e.js"
   },
   "dependencies": {
     "express": "^4.21.2",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
+    "selenium-webdriver": "^4.52.0",
     "supertest": "^7.0.0"
   }
 }
