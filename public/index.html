@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CityCare Hospital</h1>
+        <p>Hospital Appointment Management System</p>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>Book Your Appointment</h2>
+            <p>Schedule your consultation with our experienced doctors.</p>
+        </section>
+
+        <section class="container">
+            <h2>Patient Appointment Form</h2>
+
+            <form id="appointmentForm">
+
+                <label>Patient Name</label>
+                <input type="text" id="patient_name" required>
+
+                <label>Email Address</label>
+                <input type="email" id="email" required>
+
+                <label>Phone Number</label>
+                <input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" required>
+
+                <label>Select Doctor</label>
+                <select id="doctor_id" required>
+                    <option value="">Loading doctors...</option>
+                </select>
+
+                <label>Appointment Date</label>
+                <input type="date" id="appointment_date" required>
+
+                <label>Appointment Time</label>
+                <select id="appointment_time" required>
+                    <option value="">Select Time</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                </select>
+
+                <label>Reason for Appointment</label>
+                <textarea id="reason" rows="3"></textarea>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+
+            <p id="message"></p>
+        </section>
+
+        <section class="container">
+            <h2>Appointment Records</h2>
+
+            <button id="refreshButton" type="button">Refresh Records</button>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Patient</th>
+                            <th>Doctor</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentList"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CityCare Hospital | Appointment Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
